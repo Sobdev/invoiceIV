@@ -1,4 +1,3 @@
-// src/components/InvoiceSync.jsx
 import { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 
@@ -25,7 +24,6 @@ const InvoiceSync = ({ authResponse }) => {
     }, [authResponse]);
 
     const syncInvoices = async (fileId) => {
-        // Aquí puedes manejar la sincronización de las facturas
     };
 
     return (

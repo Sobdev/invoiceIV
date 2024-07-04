@@ -1,5 +1,5 @@
-import { useEffect, useState } from 'react'
-import { gapi } from 'gapi-script'
+import { useEffect, useState } from 'react';
+import { gapi } from 'gapi-script';
 
 const GoogleAuth = ({ onAuthSuccess }) => {
     const [isSignedIn, setIsSignedIn] = useState(false);
@@ -9,7 +9,8 @@ const GoogleAuth = ({ onAuthSuccess }) => {
             gapi.client.init({
                 clientId: '639068017676-bt7d21e2t9d4ggj1j18t1dat43otmfck.apps.googleusercontent.com',
                 scope: 'https://www.googleapis.com/auth/drive https://www.googleapis.com/auth/spreadsheets',
-                redirect_uri: 'http://localhost:5173'
+                redirect_uri: 'http://localhost:5173',
+                plugin_name: "invoice-sync",
             }).then(() => {
                 const authInstance = gapi.auth2.getAuthInstance();
                 setIsSignedIn(authInstance.isSignedIn.get());
